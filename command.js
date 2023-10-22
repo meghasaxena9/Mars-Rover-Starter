@@ -10,7 +10,10 @@ class Command {
  }
  
 
- let modeCommand = new Command('MODE_CHANGE', 'LOW_POWER');
- let moveCommand = new Command('MOVE', 12000);
-
+// let modeCommand = new Command('MODE_CHANGE', 'LOW_POWER');
+ //let modeCommand = new Command();
+ //console.log(modeCommand);
+ //moveCommand = new Command('MOVE', 12000);
+// console.log(modeCommand);
+// console.log(Command);
  module.exports = Command;
