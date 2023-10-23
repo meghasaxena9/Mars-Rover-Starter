@@ -32,13 +32,14 @@ class Rover {
     //     console.log(message1.commands[i].commandType);
       if (message1.commands[i].commandType === 'MODE_CHANGE') {
   //       console.log("before", this.mode);
+           obja = {};
+           objb = {};
 
        this.mode = message1.commands[i].value;
   //     console.log("after", this.mode);
        obja.completed = 'true';
        results.push(obja);
-       obja = {};
-       objb = {};
+       
       } else {
          if (message1.commands[i].commandType === 'MOVE') {
             if (this.mode === 'LOW_POWER') {
@@ -67,7 +68,7 @@ class Rover {
                objb.position = this.position; 
        //        console.log(objb);
                obja.roverStatus = objb;
-     //          console.log(obja.roverStatus);
+        //       console.log(obja.roverStatus);
       //         console.log(obja);
          
                results.push(obja);
@@ -106,6 +107,7 @@ let commands = [
    new Command('STATUS_CHECK')
 ];
 let message = new Message('Test message with three commands', commands);
+
 let rover = new Rover(100);
 //console.log(rover);    // Passes 98382 as the rover's position.
 let response = rover.receiveMessage(message);
